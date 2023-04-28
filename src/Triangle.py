@@ -1,3 +1,4 @@
+import math
 from math import sqrt
 
 from src.Figure import Figure
@@ -16,7 +17,10 @@ class Triangle(Figure):
         self.side3 = side3
         self.perimeter = self.side1 + self.side2 + self.side3
         self.poluperimeter = self.perimeter*0.5
-        self.area = sqrt(self.poluperimeter*(self.poluperimeter - self.side1)*(self.poluperimeter - self.side2)*(self.poluperimeter - self.side3))
+        if ( ( (self.poluperimeter - self.side1) <= 0 ) or ( (self.poluperimeter - self.side2) <= 0) or ( (self.poluperimeter - self.side3) <=0 ) ):
+            print("Такого треугольника не существует!")
+            raise ValueError
+        self.area = round(sqrt(self.poluperimeter*(self.poluperimeter - self.side1)*(self.poluperimeter - self.side2)*(self.poluperimeter - self.side3)), 2)
         self.summ_area = self.area
         self.name = "Triangle"
 

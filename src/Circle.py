@@ -12,8 +12,8 @@ class Circle(Figure):
             raise ValueError
         super().__init__()
         self.radius = radius
-        self.perimeter = self.radius * math.pi * 2
-        self.area = math.pi*(self.radius)**2
+        self.perimeter = round((self.radius * math.pi * 2), 2)
+        self.area = round(math.pi*(self.radius)**2, 2)
         self.summ_area = self.area
         self.name = "Circle"
 

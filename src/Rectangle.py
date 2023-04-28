@@ -8,6 +8,9 @@ class Rectangle(Figure):
         if (side1 <= 0) or (side2 <= 0):
             print("Сторона должна быть больше 0!")
             raise ValueError
+        elif side1 == side2:
+            print("Это квадрат!")
+            raise ValueError
         super().__init__()
         self.side1 = side1
         self.side2 = side2
@@ -17,4 +20,4 @@ class Rectangle(Figure):
         self.name = "Rectangle"
 
     def figure_info(self):
-        print(f"area = {self.area}, perimetr = {self.perimeter}")
+        return (f"area = {self.area}, perimetr = {self.perimeter}")
